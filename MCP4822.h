@@ -3,6 +3,8 @@
 
 #include <stdint.h>
 
+#define REF_VOLTAGE 2.048
+
 typedef enum {
     MCP4822_DAC_A,
     MCP4822_DAC_B
@@ -31,7 +33,6 @@ typedef struct {
     const uint8_t           SS_pin;
     const uint32_t*         SS_Port;
     const MCP4822_regWrite  writeFunction;
-    const float             refVoltage;
 } MCP4822_device;
 
 void MCP4822_setValue(const struct MCP4822_device, uint16_t value, MCP4822_OUTPUT_CONFIG config);
