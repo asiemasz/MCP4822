@@ -42,9 +42,9 @@ typedef struct {
     const MCP4822_CSenable  CSdisableFunction;
 } MCP4822_device;
 
-void MCP4822_setValue(const MCP4822_device dev, uint16_t value, MCP4822_OUTPUT_CONFIG config);
+void MCP4822_setValue(const MCP4822_device* dev, uint16_t value, MCP4822_OUTPUT_CONFIG config);
 
-void MCP4822_setVoltage(const MCP4822_device dev, float value, MCP4822_OUTPUT_CONFIG config);
+void MCP4822_setVoltage(const MCP4822_device* dev, float value, MCP4822_OUTPUT_CONFIG config);
 
 
 #endif
