@@ -30,9 +30,9 @@ typedef union {
     };
 } MCP4822_OUTPUT_CONFIG;
 
-typedef void (*MCP4822_regWrite) (uint8_t* data,const uint8_t len);
-typedef void (*MCP4822_CSenable) (uint32_t* GPIO_port, uint8_t GPIO_pin);
-typedef void (*MCP4822_CSdisable) (uint32_t* GPIO_port, uint8_t GPIO_pin);
+typedef void (*MCP4822_regWrite) (const uint8_t* data,const uint8_t len);
+typedef void (*MCP4822_CSenable) (const uint32_t* GPIO_port,const uint8_t GPIO_pin);
+typedef void (*MCP4822_CSdisable) (const uint32_t* GPIO_port,const uint8_t GPIO_pin);
 
 typedef struct {
     const uint8_t           SS_pin;
@@ -42,9 +42,9 @@ typedef struct {
     const MCP4822_CSenable  CSdisableFunction;
 } MCP4822_device;
 
-void MCP4822_setValue(const MCP4822_device* dev, uint16_t value, MCP4822_OUTPUT_CONFIG* config);
+void MCP4822_setValue(const MCP4822_device* dev,const uint16_t value,const MCP4822_OUTPUT_CONFIG* config);
 
-void MCP4822_setVoltage(const MCP4822_device* dev, float value, MCP4822_OUTPUT_CONFIG* config);
+void MCP4822_setVoltage(const MCP4822_device* dev,const float value,const MCP4822_OUTPUT_CONFIG* config);
 
 
 #endif
